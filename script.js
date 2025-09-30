@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // 載入 JSON
-fetch("data/chapters.json")
+fetch("chapters.json")
   .then(res => res.json())
   .then(chapters => {
     chaptersData = chapters;
