@@ -3,14 +3,14 @@ let chaptersData = [];
 let langData = {};
 let currentChapter = null;
 
-// 語言切換
+// 初始化
 document.addEventListener("DOMContentLoaded", () => {
   const langSelect = document.getElementById("lang-select");
   langSelect.addEventListener("change", async () => {
     currentLang = langSelect.value;
     await loadLanguage(currentLang);
-    renderChapterList();  // ← 切換語言後，更新左邊章節目錄
-    if (currentChapter) showChapter(currentChapter);
+    renderChapterList();   // 切換語言後重建目錄
+    if (currentChapter) showChapter(currentChapter);  // 保留當前章節
   });
 });
 
@@ -20,11 +20,11 @@ fetch("chapters.json")
   .then(async (chapters) => {
     chaptersData = chapters;
 
-    // 先載入英文
+    // 預設載入英文語言檔
     await loadLanguage("en");
     renderChapterList();
 
-    // 預設載入 Introduction
+    // 預設顯示 Introduction
     const intro = chapters.find(ch => ch.id === 0);
     if (intro) {
       currentChapter = intro;
@@ -41,19 +41,17 @@ function loadLanguage(lang) {
     });
 }
 
-// 建立章節清單
+// 重建章節目錄
 function renderChapterList() {
   const chapterList = document.getElementById("chapter-list");
   chapterList.innerHTML = ""; // 清空舊目錄
 
-  // 按 section 分組
   const sections = {};
   chaptersData.forEach(ch => {
     if (!sections[ch.section]) sections[ch.section] = [];
     sections[ch.section].push(ch);
   });
 
-  // 建立目錄
   for (const [section, items] of Object.entries(sections)) {
     if (section !== "Introduction") {
       const secTitle = document.createElement("h3");
