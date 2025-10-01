@@ -1,5 +1,6 @@
 let currentLang = "en";
 let chaptersData = [];
+let langData = {};
 let currentChapter = null;
 
 // 語言切換
@@ -7,13 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const langSelect = document.getElementById("lang-select");
   langSelect.addEventListener("change", () => {
     currentLang = langSelect.value;
-    if (currentChapter) {
-      showChapter(currentChapter); // 切換語言時，重新渲染目前章節
-    }
+    loadLanguage(currentLang).then(() => {
+      if (currentChapter) showChapter(currentChapter);
+    });
   });
 });
 
-// 載入 JSON
+// 載入章節結構
 fetch("chapters.json")
   .then(res => res.json())
   .then(chapters => {
@@ -38,24 +39,35 @@ fetch("chapters.json")
         link.href = "#";
         link.textContent = ch.title;
         link.onclick = () => {
-          currentChapter = ch; // 記錄目前章節
+          currentChapter = ch;
           showChapter(ch);
         };
         chapterList.appendChild(link);
       });
     }
 
-    // 預設載入簡介 (id=0)
-    const intro = chapters.find(ch => ch.id === 0);
-    if (intro) {
-      currentChapter = intro;
-      showChapter(intro);
-    }
+    // 預設載入英文
+    loadLanguage("en").then(() => {
+      const intro = chapters.find(ch => ch.id === 0);
+      if (intro) {
+        currentChapter = intro;
+        showChapter(intro);
+      }
+    });
   });
+
+// 載入語言 JSON
+function loadLanguage(lang) {
+  return fetch(`lang_${lang}.json`)
+    .then(res => res.json())
+    .then(data => {
+      langData = data;
+    });
+}
 
 function showChapter(ch) {
   const content = document.getElementById("content");
-  let text = currentLang === "en" ? ch.summary_en : ch.summary_cn;
+  let text = langData[ch.id] || "(No content yet)";
 
   content.innerHTML = `
     <h1>${ch.title}</h1>
