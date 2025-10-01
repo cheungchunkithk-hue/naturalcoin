@@ -1,62 +1,14 @@
 [
-  {
-    "id": 0,
-    "title": "Introduction｜簡介",
-    "section": "Introduction"
-  },
-  {
-    "id": 1,
-    "title": "Chapter 1｜Core Definitions: Human・Currency・Nature",
-    "section": "Part I｜Core Philosophy and Definitions"
-  },
-  {
-    "id": 2,
-    "title": "Chapter 2｜Introduction to Natural Coin: Flow and Decay",
-    "section": "Part I｜Core Philosophy and Definitions"
-  },
-  {
-    "id": 3,
-    "title": "Chapter 3｜Blind Spots of Capitalism: Monopoly, Hoarding, Invisible Value",
-    "section": "Part I｜Core Philosophy and Definitions"
-  },
-  {
-    "id": 4,
-    "title": "Chapter 4｜Circulationism: The New Poetics of Economy",
-    "section": "Part I｜Core Philosophy and Definitions"
-  },
-  {
-    "id": 5,
-    "title": "Chapter 5｜Comparison with Capitalism, Welfare, Socialism",
-    "section": "Part I｜Core Philosophy and Definitions"
-  },
-  {
-    "id": 6,
-    "title": "Chapter 6｜Seven Iron Rules of Natural Coin",
-    "section": "Part I｜Core Philosophy and Definitions"
-  },
-  {
-    "id": 7,
-    "title": "Chapter 7｜Declaration and Belief Clauses",
-    "section": "Part I｜Core Philosophy and Definitions"
-  },
-  {
-    "id": 8,
-    "title": "Chapter 8｜Decay and Anti-Monopoly Mechanisms",
-    "section": "Part I｜Core Philosophy and Definitions"
-  },
-  {
-    "id": 9,
-    "title": "Chapter 9｜FreshDecay: Logic of Time-based Corruption",
-    "section": "Part I｜Core Philosophy and Definitions"
-  },
-  {
-    "id": 10,
-    "title": "Chapter 10｜Disval + Fresh Model Integration",
-    "section": "Part I｜Core Philosophy and Definitions"
-  },
-  {
-    "id": 11,
-    "title": "Chapter 11｜Currency and Time: The Fourth Dimension",
-    "section": "Part I｜Core Philosophy and Definitions"
-  }
+  { "id": 0, "section": "Introduction" },
+  { "id": 1, "section": "Part I｜Core Philosophy and Definitions" },
+  { "id": 2, "section": "Part I｜Core Philosophy and Definitions" },
+  { "id": 3, "section": "Part I｜Core Philosophy and Definitions" },
+  { "id": 4, "section": "Part I｜Core Philosophy and Definitions" },
+  { "id": 5, "section": "Part I｜Core Philosophy and Definitions" },
+  { "id": 6, "section": "Part I｜Core Philosophy and Definitions" },
+  { "id": 7, "section": "Part I｜Core Philosophy and Definitions" },
+  { "id": 8, "section": "Part I｜Core Philosophy and Definitions" },
+  { "id": 9, "section": "Part I｜Core Philosophy and Definitions" },
+  { "id": 10, "section": "Part I｜Core Philosophy and Definitions" },
+  { "id": 11, "section": "Part I｜Core Philosophy and Definitions" }
 ]
