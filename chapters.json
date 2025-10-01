@@ -1,5 +1,10 @@
 [
   {
+    "id": 0,
+    "title": "Introduction｜簡介",
+    "section": "Introduction"
+  },
+  {
     "id": 1,
     "title": "Chapter 1｜Core Definitions: Human・Currency・Nature",
     "section": "Part I｜Core Philosophy and Definitions"
