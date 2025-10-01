@@ -44,7 +44,7 @@ function loadLanguage(lang) {
 // 重建章節目錄
 function renderChapterList() {
   const chapterList = document.getElementById("chapter-list");
-  chapterList.innerHTML = ""; // 清空舊目錄
+  chapterList.innerHTML = "";
 
   const sections = {};
   chaptersData.forEach(ch => {
@@ -53,9 +53,11 @@ function renderChapterList() {
   });
 
   for (const [section, items] of Object.entries(sections)) {
-    if (section !== "Introduction") {
+    const secTitleText = langData.sections[section] || section;
+
+    if (section !== "intro") {
       const secTitle = document.createElement("h3");
-      secTitle.textContent = section;
+      secTitle.textContent = secTitleText;
       chapterList.appendChild(secTitle);
     }
 
@@ -72,7 +74,6 @@ function renderChapterList() {
     });
   }
 }
-
 // 顯示章節內容
 function showChapter(ch) {
   const content = document.getElementById("content");
