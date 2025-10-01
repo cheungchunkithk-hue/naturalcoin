@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const langSelect = document.getElementById("lang-select");
   langSelect.addEventListener("change", async () => {
     currentLang = langSelect.value;
-    await loadLanguage(currentLang);   // 確保載入完成
+    await loadLanguage(currentLang);
     if (currentChapter) showChapter(currentChapter);
   });
 });
@@ -29,9 +29,12 @@ fetch("chapters.json")
 
     // 建立目錄
     for (const [section, items] of Object.entries(sections)) {
-      const secTitle = document.createElement("h3");
-      secTitle.textContent = section;
-      chapterList.appendChild(secTitle);
+      // 如果不是 Introduction 才顯示 section 標題
+      if (section !== "Introduction") {
+        const secTitle = document.createElement("h3");
+        secTitle.textContent = section;
+        chapterList.appendChild(secTitle);
+      }
 
       items.forEach(ch => {
         const link = document.createElement("a");
@@ -45,7 +48,7 @@ fetch("chapters.json")
       });
     }
 
-    // 預設載入英文
+    // 預設載入 Introduction
     loadLanguage("en").then(() => {
       const intro = chapters.find(ch => ch.id === 0);
       if (intro) {
@@ -64,9 +67,9 @@ function loadLanguage(lang) {
     });
 }
 
+// 顯示章節內容
 function showChapter(ch) {
   const content = document.getElementById("content");
-  // 保證 key 轉為字串
   let text = langData[String(ch.id)] || "(No content yet)";
 
   content.innerHTML = `
