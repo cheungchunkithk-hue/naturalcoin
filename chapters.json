@@ -1,14 +1,14 @@
 [
-  { "id": 0, "section": "Introduction" },
-  { "id": 1, "section": "Part I｜Core Philosophy and Definitions" },
-  { "id": 2, "section": "Part I｜Core Philosophy and Definitions" },
-  { "id": 3, "section": "Part I｜Core Philosophy and Definitions" },
-  { "id": 4, "section": "Part I｜Core Philosophy and Definitions" },
-  { "id": 5, "section": "Part I｜Core Philosophy and Definitions" },
-  { "id": 6, "section": "Part I｜Core Philosophy and Definitions" },
-  { "id": 7, "section": "Part I｜Core Philosophy and Definitions" },
-  { "id": 8, "section": "Part I｜Core Philosophy and Definitions" },
-  { "id": 9, "section": "Part I｜Core Philosophy and Definitions" },
-  { "id": 10, "section": "Part I｜Core Philosophy and Definitions" },
-  { "id": 11, "section": "Part I｜Core Philosophy and Definitions" }
+  { "id": 0, "section": "intro" },
+  { "id": 1, "section": "part1" },
+  { "id": 2, "section": "part1" },
+  { "id": 3, "section": "part1" },
+  { "id": 4, "section": "part1" },
+  { "id": 5, "section": "part1" },
+  { "id": 6, "section": "part1" },
+  { "id": 7, "section": "part1" },
+  { "id": 8, "section": "part1" },
+  { "id": 9, "section": "part1" },
+  { "id": 10, "section": "part1" },
+  { "id": 11, "section": "part1" }
 ]
