@@ -74,6 +74,7 @@ function renderChapterList() {
     });
   }
 }
+
 // 顯示章節內容
 function showChapter(ch) {
   const content = document.getElementById("content");
@@ -85,4 +86,4 @@ function showChapter(ch) {
     <h1>${title}</h1>
     <p>${text}</p>
   `;
-} 
+}
