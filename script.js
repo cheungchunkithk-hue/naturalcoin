@@ -1,4 +1,3 @@
-
 let currentLang = "en";
 let chaptersData = [];
 let currentChapter = null;
@@ -8,7 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const langSelect = document.getElementById("lang-select");
   langSelect.addEventListener("change", () => {
     currentLang = langSelect.value;
-    if (currentChapter) showChapter(currentChapter);
+    if (currentChapter) {
+      showChapter(currentChapter); // 切換語言時，重新渲染目前章節
+    }
   });
 });
 
@@ -37,7 +38,7 @@ fetch("chapters.json")
         link.href = "#";
         link.textContent = ch.title;
         link.onclick = () => {
-          currentChapter = ch;
+          currentChapter = ch; // 記錄目前章節
           showChapter(ch);
         };
         chapterList.appendChild(link);
@@ -59,21 +60,5 @@ function showChapter(ch) {
   content.innerHTML = `
     <h1>${ch.title}</h1>
     <p>${text}</p>
-    <section id="comments">
-      <script src="https://giscus.app/client.js"
-        data-repo="cheungchunkithk-hue/naturalcoin"
-        data-repo-id="R_kgDOP5WTDQ"
-        data-mapping="number"
-        data-term="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-      </script>
-    </section>
   `;
 }
-
