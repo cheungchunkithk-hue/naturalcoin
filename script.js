@@ -1,3 +1,4 @@
+
 let currentLang = "en";
 let chaptersData = [];
 let langData = {};
