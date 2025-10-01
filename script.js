@@ -59,14 +59,12 @@ function showChapter(ch) {
   content.innerHTML = `
     <h1>${ch.title}</h1>
     <p>${text}</p>
-
-    <!-- Giscus 留言區：全書共用同一個 Discussion (#2) -->
     <section id="comments">
       <script src="https://giscus.app/client.js"
         data-repo="cheungchunkithk-hue/naturalcoin"
         data-repo-id="R_kgDOP5WTDQ"
         data-mapping="number"
-        data-term="2"
+        data-term="1"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
@@ -78,3 +76,4 @@ function showChapter(ch) {
     </section>
   `;
 }
+
