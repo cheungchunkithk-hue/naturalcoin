@@ -80,10 +80,12 @@ function showChapter(ch) {
   const content = document.getElementById("content");
   const data = langData[String(ch.id)];
   let title = data ? data.title : "No title";
-  let text = data ? data.summary : "(No content yet)";
+  let summary = data ? data.summary : "(No summary)";
+  let body = data && data.body ? data.body.map(p => `<p>${p}</p>`).join("") : "";
 
   content.innerHTML = `
     <h1>${title}</h1>
-    <p>${text}</p>
+    <p><em>${summary}</em></p>
+    ${body}
   `;
 }
