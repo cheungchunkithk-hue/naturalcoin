@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   langSelect.addEventListener("change", async () => {
     currentLang = langSelect.value;
     await loadLanguage(currentLang);
-    renderChapterList();   // 切換語言後重建目錄
-    if (currentChapter) showChapter(currentChapter);  // 保留當前章節
+    renderChapterList();
+    if (currentChapter) showChapter(currentChapter);
   });
 });
 
@@ -19,12 +19,9 @@ fetch("chapters.json")
   .then(res => res.json())
   .then(async (chapters) => {
     chaptersData = chapters;
-
-    // 預設載入英文語言檔
     await loadLanguage("en");
     renderChapterList();
 
-    // 預設顯示 Introduction
     const intro = chapters.find(ch => ch.id === 0);
     if (intro) {
       currentChapter = intro;
@@ -36,12 +33,10 @@ fetch("chapters.json")
 function loadLanguage(lang) {
   return fetch(`lang_${lang}.json`)
     .then(res => res.json())
-    .then(data => {
-      langData = data;
-    });
+    .then(data => { langData = data; });
 }
 
-// 重建章節目錄
+// 建立章節清單
 function renderChapterList() {
   const chapterList = document.getElementById("chapter-list");
   chapterList.innerHTML = "";
@@ -54,7 +49,6 @@ function renderChapterList() {
 
   for (const [section, items] of Object.entries(sections)) {
     const secTitleText = langData.sections[section] || section;
-
     if (section !== "intro") {
       const secTitle = document.createElement("h3");
       secTitle.textContent = secTitleText;
@@ -75,13 +69,36 @@ function renderChapterList() {
   }
 }
 
-// 顯示章節內容
-function showChapter(ch) {
+// 顯示章節內容（可讀取 Google Docs 正文）
+async function showChapter(ch) {
   const content = document.getElementById("content");
   const data = langData[String(ch.id)];
   let title = data ? data.title : "No title";
   let summary = data ? data.summary : "(No summary)";
-  let body = data && data.body ? data.body.map(p => `<p>${p}</p>`).join("") : "";
+  let body = "";
+
+  // 如果有 Google Docs 正文
+  if (data && data.docUrl) {
+    try {
+      const res = await fetch(data.docUrl);
+      if (res.ok) {
+        const text = await res.text();
+        // 自動將換行轉成段落
+        body = text
+          .split(/\n+/)
+          .map(p => `<p>${p.trim()}</p>`)
+          .join("");
+      } else {
+        body = "<p>(正文載入失敗)</p>";
+      }
+    } catch (err) {
+      console.error("載入 Google Docs 正文失敗:", err);
+      body = "<p>(無法載入正文)</p>";
+    }
+  } else if (data && data.body) {
+    // 備援方案：仍可讀本地 JSON body
+    body = data.body.map(p => `<p>${p}</p>`).join("");
+  }
 
   content.innerHTML = `
     <h1>${title}</h1>
