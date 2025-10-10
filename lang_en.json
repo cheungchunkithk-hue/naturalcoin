@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "intro": "Introduction",
+    "part1": "Part I Core Philosophy and Definitions"
+  },
+  "0": {
+    "title": "Introduction",
+    "summary": "Natural Coin is a new philosophy of money built on circulation, decay, and resonance.",
+    "docUrl": "https://docs.google.com/document/d/e/2PACX-1vQI9DqIQujiyfqI7RUA25tfe-stM3lX0EyJi0Pb4JaKkl5f2BnY83PuWDk7oz6-UMgpqYNHDpud6rfA/pub"
+  },
+  "1": {
+    "title": "Chapter 1 Core Definitions: Human・Currency・Nature",
+    "summary": "Defines the triad relationship between Human, Currency, and Nature as the philosophical foundation of Natural Coin.",
+    "body": [
+      "The first core definition establishes Human as the subject of value, Currency as the medium of exchange, and Nature as the grounding system.",
+      "This triad relationship is the philosophical root of Natural Coin, binding human society with ecological balance.",
+      "",
+      "### Sample Markdown",
+      "- bullet item A",
+      "- bullet item B",
+      "",
+      "```js",
+      "console.log('hello marked');",
+      "```"
+    ]
+  },
+  "2": {
+    "title": "Chapter 2 Introduction to Natural Coin: Flow and Decay",
+    "summary": "Introduces Natural Coin as a system based on flow, decay, and resonance, contrasting with traditional capital logic."
+  }
+}
