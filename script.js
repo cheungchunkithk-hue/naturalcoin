@@ -42,7 +42,8 @@ function normalizeUrl(u){
     const x=new URL(u);
     if(x.hostname.includes("docs.google.com")&&x.pathname.includes("/document/d/")){
       const id=x.pathname.split("/document/d/")[1].split("/")[0];
-      return`https://docs.google.com/document/d/${id}/pub?output=txt`;
+      return`"docUrl": "https://docs.google.com/document/d/1n8xHf.../pub?output=txt"
+;
     }
   }catch(e){}
   return u;
@@ -78,3 +79,4 @@ async function showChapter(ch){
   }else if(d?.body){const md=Array.isArray(d.body)?d.body.join("\\n\\n"):String(d.body);html=window.marked.parse(md);}
   el.innerHTML=`<h1>${title}</h1><p><em>${sum}</em></p><article>${html}</article>`;
 }
+
