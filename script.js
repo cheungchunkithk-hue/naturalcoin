@@ -42,7 +42,7 @@ function normalizeUrl(u){
     const x=new URL(u);
     if(x.hostname.includes("docs.google.com")&&x.pathname.includes("/document/d/")){
       const id=x.pathname.split("/document/d/")[1].split("/")[0];
-      return`"docUrl": "https://docs.google.com/document/d/1n8xHf.../pub?output=txt"
+      return`"docUrl": "https://docs.google.com/document/d/e/2PACX-1vQI9DqIQujiyfqI7RUA25tfe-stM3lX0EyJi0Pb4JaKkl5f2BnY83PuWDk7oz6-UMgpqYNHDpud6rfA/pub?output=txt"
 ;
     }
   }catch(e){}
@@ -79,4 +79,5 @@ async function showChapter(ch){
   }else if(d?.body){const md=Array.isArray(d.body)?d.body.join("\\n\\n"):String(d.body);html=window.marked.parse(md);}
   el.innerHTML=`<h1>${title}</h1><p><em>${sum}</em></p><article>${html}</article>`;
 }
+
 
