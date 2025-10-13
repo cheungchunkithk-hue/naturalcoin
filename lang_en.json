@@ -6,7 +6,7 @@
   "0":{
     "title":"Introduction",
     "summary":"Natural Coin is a new philosophy of money built on circulation, decay, and resonance.",
-    "docUrl":"https://docs.google.com/document/d/e/2PACX-1vQI9DqIQujiyfqI7RUA25tfe-stM3lX0EyJi0Pb4JaKkl5f2BnY83PuWDk7oz6-UMgpqYNHDpud6rfA/pub?output=txt"
+    "docUrl":"https://cheungchunkithk-hue.github.io/naturalcoin/docs/intro.md"
   },
   "1":{"title":"Chapter 1｜Core Definitions: Human・Currency・Nature","summary":"","docUrl":""},
   "2":{"title":"Chapter 2｜Flow and Decay","summary":"","docUrl":""},
@@ -20,3 +20,4 @@
   "10":{"title":"Chapter 10｜Disval + Freshness Model","summary":"","docUrl":""},
   "11":{"title":"Chapter 11｜Currency and Time: The Fourth Dimension","summary":"","docUrl":""}
 }
+
