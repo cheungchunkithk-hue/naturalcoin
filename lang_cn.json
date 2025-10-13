@@ -1,0 +1,22 @@
+{
+  "sections":{
+    "intro":"簡介",
+    "part1":"第一部｜核心理念與哲學基礎"
+  },
+  "0":{
+    "title":"簡介",
+    "summary":"自然幣是一種全新的貨幣哲學，以循環、腐敗、共振為核心。",
+    "docUrl":"https://docs.google.com/document/d/e/2PACX-1vQI9DqIQujiyfqI7RUA25tfe-stM3lX0EyJi0Pb4JaKkl5f2BnY83PuWDk7oz6-UMgpqYNHDpud6rfA/pub?output=txt"
+  },
+  "1":{"title":"第一章｜核心定義：人・貨幣・自然","summary":"","docUrl":""},
+  "2":{"title":"第二章｜流動與腐敗","summary":"","docUrl":""},
+  "3":{"title":"第三章｜壟斷與價值","summary":"","docUrl":""},
+  "4":{"title":"第四章｜循環主義：經濟的新詩學","summary":"","docUrl":""},
+  "5":{"title":"第五章｜制度比較","summary":"","docUrl":""},
+  "6":{"title":"第六章｜自然幣七條鐵律","summary":"","docUrl":""},
+  "7":{"title":"第七章｜宣言與信念條款","summary":"","docUrl":""},
+  "8":{"title":"第八章｜腐敗與反壟斷機制","summary":"","docUrl":""},
+  "9":{"title":"第九章｜時間性腐敗（FreshDecay）","summary":"","docUrl":""},
+  "10":{"title":"第十章｜散值與新鮮度模型整合","summary":"","docUrl":""},
+  "11":{"title":"第十一章｜貨幣與時間：第四維度","summary":"","docUrl":""}
+}
